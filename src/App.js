@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Registration from "./components/Registration";
+import Login from "./components/Login";
+import CustomerDashboard from "./components/CustomerDashboard";
+import RestaurantDashboard from "./components/RestaurantDashboard";
 
 function App() {
+  const [user, setUser] = useState(null);
+  const [restaurants, setRestaurants] = useState([]);
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Foodie</h1>
+      <div className="container">
+        <Registration setUser={setUser} />
+        <Login setUser={setUser} />
+        {user && user.role === "customer" && (
+          <CustomerDashboard
+            user={user}
+            restaurants={restaurants}
+            setRestaurants={setRestaurants}
+            selectedRestaurant={selectedRestaurant}
+            setSelectedRestaurant={setSelectedRestaurant}
+          />
+        )}
+        {user && user.role === "restaurant" && (
+          <RestaurantDashboard
+            user={user}
+            restaurants={restaurants}
+            setRestaurants={setRestaurants}
+            setSelectedRestaurant={setSelectedRestaurant}
+          />
+        )}
+      </div>
     </div>
   );
 }
 
 export default App;
+
