@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Objects</title>
+</head>
+<body>
+
+    <script>
+        var class_students = [
+            {
+                name: "Rizky",
+                age: 20,
+                address: "Jl. Raya Cipadung No. 9",
+                hobbies: ["Reading", "Coding", "Gaming"],
+            },
+            {
+                name: "Jack",
+                age: 22,
+                address: "Jl. Raya Cipadung No. 10",
+                hobbies: ["Reading", "Coding", "Gaming"],
+            },
+            {
+                name: "John",
+                age: 21,
+                address: "Jl. Raya Cipadung No. 11",
+                hobbies: ["Reading", "Coding", "Gaming"],
+            },
+        ]
+
+        // printing them
+
+        for (var i=0; i < class_students.length; i++){
+            document.writeln(
+                "Name: " + class_students[i].name + "<br>" +
+                "Age: " + class_students[i].age + "<br>" +
+                "Address: " + class_students[i].address + "<br>" +
+                "Hobbies: " + class_students[i].hobbies + "<br><br>"
+            );
+        }
+
+        // Using For IN
+        document.writeln("<br><br><b>Using For IN</b><br><br>");
+
+        for (var i in class_students){
+            document.writeln(
+                "Name: " + class_students[i].name + "<br>" +
+                "Age: " + class_students[i].age + "<br>" +
+                "Address: " + class_students[i].address + "<br>" +
+                "Hobbies: " + class_students[i].hobbies + "<br><br>"
+                
+            )
+        }
+    </script>
+    
+</body>
+</html>

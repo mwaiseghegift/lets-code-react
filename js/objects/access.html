@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Java</title>
+</head>
+<body>
+
+    <script>
+        var itsMe = {
+            name: "Rizky",
+            age: 20,
+            address: "Jl. Raya Cipadung No. 9",
+            hobbies: ["Reading", "Coding", "Gaming"], // array
+        }, 
+        get_data = function () {
+            return "Name: " + itsMe.name + "\n" + "<br>" +
+            "Age: " + itsMe.age + "\n" + "<br>" +
+            "Address: " + itsMe.address + "\n" + "<br>" +
+            "Hobbies: " + itsMe.hobbies;
+        }
+
+        // access object
+        console.log(itsMe);
+        document.writeln(get_data());
+
+        document.writeln("<br><br>");
+
+        // second way
+        var student = new Object();
+        student.name = "Rizky";
+        student.age = 22;
+        student.address = "Jl. Raya Cipadung No. 9";
+        student.hobbies = ["Reading", "Coding", "Gaming"];
+
+        get_student_data = function () {
+            return "Name: " + student.name + "\n" + "<br>" +
+            "Age: " + student.age + "\n" + "<br>" +
+            "Address: " + student.address + "\n" + "<br>" +
+            "Hobbies: " + student.hobbies;
+        }
+
+        // access object
+        console.log(student);
+        document.writeln(get_student_data());
+
+        
+    </script>
+    
+</body>
+</html>
